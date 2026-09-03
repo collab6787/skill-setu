@@ -92,7 +92,12 @@ import {
 
 export default function App() {
   const [activeRole, setActiveRole] = useState<UserRole>('student');
-  const [activeTab, setActiveTab] = useState<string>('dashboard');
+  const [activeTab, setActiveTab] = useState<string>(() => {
+    if (typeof window !== 'undefined' && window.location.pathname.includes('/verify/passport')) {
+      return 'verify-public';
+    }
+    return 'dashboard';
+  });
   const [language, setLanguage] = useState<LanguageCode>('en');
 
   // Application Data States

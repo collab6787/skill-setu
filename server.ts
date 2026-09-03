@@ -94,7 +94,8 @@ async function startServer() {
   // Helper to ensure QR code data URL exists on passports
   for (const pid of Object.keys(DEMO_PASSPORTS)) {
     try {
-      const publicUrl = `https://ais-dev-ohcus34o4q3aemnmtjquw7-958238151994.asia-east1.run.app/verify/passport/${pid}`;
+      const baseUrl = process.env.APP_URL || '';
+      const publicUrl = baseUrl ? `${baseUrl}/verify/passport/${pid}` : `/verify/passport/${pid}`;
       DEMO_PASSPORTS[pid].qrCodeDataUrl = await QRCode.toDataURL(publicUrl, {
         margin: 1,
         color: { dark: '#0f172a', light: '#ffffff' }
