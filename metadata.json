@@ -1,0 +1,8 @@
+{
+  "name": "SkillSetu - Academia & Industry Skill Platform",
+  "description": "Smart India Hackathon 2026 portal for verified skill passports, ML skill demand intelligence, job simulation, and academia-industry collaboration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
